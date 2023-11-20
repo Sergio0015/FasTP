@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Obtener el Índice del ComboBox</title>
+</head>
+<body>
+
+<select id="miComboBox">
+  <option value="opcion1">Opción 1</option>
+  <option value="opcion2">Opción 2</option>
+  <option value="opcion3">Opción 3</option>
+</select>
+
+<button onclick="obtenerIndice()">Obtener Índice</button>
+
+<script>
+  function obtenerIndice() {
+    // Obtener el elemento del combo box
+    var combo = document.getElementById("miComboBox");
+
+    // Obtener el índice seleccionado
+    var indiceSeleccionado = combo.selectedIndex;
+
+    // Mostrar el índice en la consola (puedes hacer lo que desees con el índice)
+    console.log("Índice seleccionado: " + indiceSeleccionado);
+  }
+</script>
+
+</body>
+</html>

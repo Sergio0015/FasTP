@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="css/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<script>
+    var toreo = ["Soriana Eje 8", "Interceccion Eje 8 Mexiquense", "Salida Eje 8", "Villa de la Flores", "Zarzaparrillas", "Ex Hacienda San Felipe", "Cosmopol"];
+    var scritobal = ["Cosmopol", "Ex Hacienda San Felipe", "Zarzaparrillas", "Villa de las Flores", "Salida Eje 8", "Plaza Coacalco"];
+    var tulte = ["Plaza Coacalco", "Salida Eje 8", "Villa de las Flores", "Zarzaparrillas", "Mega", "Entrada a Tultepec"];
+    var sbartolo = ["Soriana Eje 8", "Interceccion Eje 8 Mexiquense", "Villa de la Flores", "Zarzaparrillas", "Entrada de Tultepec", "UPVM"];
+
+    function mostrarSeleccion() {
+        var combo = document.getElementById("rutas");
+        select = document.getElementById("de");
+        var seleccion = combo.options[combo.selectedIndex].value;
+        for (let i = select.options.length; i >= 1; i--) {
+            select.remove(i);
+        }
+        if (seleccion == "toreo") {
+            for (i = 0; i < toreo.length; i++) {
+                option = document.createElement("option");
+                option.value = toreo[i];
+                option.text = toreo[i];
+                select.appendChild(option);
+            }
+        }
+        if (seleccion == "cristobal") {
+            for (i = 0; i < scritobal.length; i++) {
+                option = document.createElement("option");
+                option.value = scritobal[i];
+                option.text = scritobal[i];
+                select.appendChild(option);
+            }
+        }
+        if (seleccion == "tulte") {
+            for (i = 0; i < tulte.length; i++) {
+                option = document.createElement("option");
+                option.value = tulte[i];
+                option.text = tulte[i];
+                select.appendChild(option);
+            }
+        }
+        if (seleccion == "bartolo") {
+            for (i = 0; i < sbartolo.length; i++) {
+                option = document.createElement("option");
+                option.value = sbartolo[i];
+                option.text = sbartolo[i];
+                select.appendChild(option);
+            }
+        }
+    }
+    function mostrarSeleccion2() {
+        var combo = document.getElementById("rutas");
+        select = document.getElementById("a");
+        for (let i = select.options.length; i >= 1; i--) {
+            select.remove(i);
+        }
+        select2 = document.getElementById("de");
+        let index = select2.selectedIndex;
+        var seleccion = combo.options[combo.selectedIndex].value;
+        if (seleccion == "toreo") {
+            for (i = index; i < toreo.length; i++) {
+                option = document.createElement("option");
+                option.value = toreo[i];
+                option.text = toreo[i];
+                select.appendChild(option);
+            }
+        }
+        else if (seleccion == "cristobal") {
+            for (i = index; i < scritobal.length; i++) {
+                option = document.createElement("option");
+                option.value = scritobal[i];
+                option.text = scritobal[i];
+                select.appendChild(option);
+            }
+        }
+        else if (seleccion == "tulte") {
+            for (i = index; i < tulte.length; i++) {
+                option = document.createElement("option");
+                option.value = tulte[i];
+                option.text = tulte[i];
+                select.appendChild(option);
+            }
+        }
+        else if (seleccion == "bartolo") {
+            for (i = index; i < sbartolo.length; i++) {
+                option = document.createElement("option");
+                option.value = sbartolo[i];
+                option.text = sbartolo[i];
+                select.appendChild(option);
+            }
+        }
+    }
+    function precio(){
+        var valorParaInput = '$12.00 MXN';
+        document.getElementById('precio').value = valorParaInput;
+    }
+</script>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary " >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="imagenes/LTZ.jpg" alt="Delfinsote" class="logo" width="55px" height="55px">
+                Fast Path 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="rutas.html">Rutas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="conocenos.html">Conocenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comentarios.html">Comentarios</a>
+                    </li>
+                </ul>
+
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="mb-3">
+                    <label for="combo1" class="form-label">Rutas</label>
+                    <select class="form-select" id="rutas" name="combo1" onchange="mostrarSeleccion()">
+                        <option value="opcion1">Selecciona una opcion...</option>
+                        <option value="granjas">Granjas</option>
+                        <option value="toreo">Toreo</option>
+                        <option value="cristobal">San Cristobal</option>
+                        <option value="tulte">Ruta Tultepec</option>
+                        <option value="bartolo">San Bartolo</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="combo1" class="form-label">De</label>
+                    <select class="form-select" id="de" name="combo1" onchange="mostrarSeleccion2()">
+                        <option value="opcion2">Selecciona una opcion...</option>
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="combo2" class="form-label">A</label>
+                    <select class="form-select" id="a" name="combo2" onchange="precio()">
+                        <option value="opcion3">Selecciona una opcion...</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Precio Aproximado</label>
+                        <input class="form-control" type="text" id="precio">
+                </div>
+            </div>
+
+            <!-- Parte derecha con una imagen que ocupa el tamaño de la pantalla -->
+            <div class="col-md-8 text-center">
+                <img src="imagenes/LTZ.jpg" class="img-fluid" alt="Imagen a pantalla completa">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary fixed-bottom">
+
+        <div class="row">
+
+            <div class="col-md text-white text-center">
+
+                <p>Síguenos en nuestras redes sociales:
+                    <a href="https://instagram.com/fastpath12?igshid=YTQwZjQ0NmI0OA" target="_blank">
+                      <img src="imagenes/insta.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61553573800124" target="_blank">
+                      <img src="imagenes/face.jpg" alt="Facebook" style="width: 30px; height: 30px;">
+                    </a>
+                    <a href="https://www.tiktok.com/@fastpath8?_t=8hVEMIst68L&_r=1" target="_blank">
+                        <img src="imagenes/tiktok.png" alt="TikTok" style="width: 30px; height: 30px;">
+                      </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
